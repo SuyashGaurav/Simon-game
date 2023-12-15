@@ -48,7 +48,6 @@ h2 {
 .start-btn:hover {
     background-color: #09c9f0b3;
     opacity: 1;
-    /* transition: all 0.25s ease-in  0s; */
     cursor:pointer;
 }
 
