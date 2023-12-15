@@ -4,6 +4,7 @@ let highest_score = 0
 let matchAll = true
 
 let btns = ["red", "yellow", "purple", "green"]
+let audioPlayer = document.getElementById("audioPlayer")
 
 let h2 = document.getElementById("start");
 let started = false
@@ -13,18 +14,20 @@ function btnFlash(randBtn){
     return new Promise((resolve, reject) => {
         setTimeout(()=>{
             randBtn.classList.add("flash")
-        }, 1000)
+            if(matchAll){audioPlayer.src = `tunes/${randBtn.getAttribute("id")}.mp3`
+            audioPlayer.play()}
+        }, 600)
         setTimeout(()=>{
             randBtn.classList.remove("flash");
-        }, 1400)
-        setTimeout(()=>{
             resolve(1)
-        }, 1400)
+        }, 1000)
     })  
 }
 
 let userFlash = (randBtn) => { 
     setTimeout(()=>{
+        if(matchAll){audioPlayer.src = `tunes/${randBtn.getAttribute("id")}.mp3`
+        audioPlayer.play()}
         randBtn.classList.add("user")
     }, 40)
     setTimeout(()=>{
@@ -36,6 +39,16 @@ let levelUp = async() => {
     level++
     h2.innerHTML = `Level ${level}`;
     h2.style.color = "green"
+    await (new Promise((resolve, reject)=> {
+        setTimeout(()=>{
+            if(matchAll){audioPlayer.src = `tunes/success.mp3`
+            audioPlayer.play()}
+        }, 300)
+        setTimeout(()=>{
+            resolve(1)
+        }, 600)
+    }))
+    
 
     setTimeout(() => {
         h2.style.fontSize = "24px"
@@ -98,6 +111,8 @@ function checkMatch() {
             document.body.style.backgroundColor = "antiquewhite"
         }, 200)
         matchAll = false
+        audioPlayer.src = `tunes/lose.mp3`
+        audioPlayer.play()
         return false
     }
 }
@@ -111,7 +126,6 @@ function btnPressed() {
     if(matchAll && checkMatch() && userSeq.length == gameSeq.length){
         gameSeq = []
         userSeq = []
-        console.log("abe chal na")
         setTimeout(() => {
             levelUp()
         }, 300);   
