@@ -33,7 +33,7 @@ This is a simple implementation of the classic Simon Says game built using HTML,
    - Click on the colors in the same order that Simon played them.
 
 5. **Correct Sequence:**
-   - If you successfully repeat the sequence, Simon will add a new color to the sequence, and the game continues to the next round.
+   - If you successfully repeat the sequence, Simon will give you a new sequence to repeat, and the game continues to the next round.
 
 6. **Incorrect Sequence:**
    - If you make a mistake and click the wrong color or click the colors in the wrong order, the game will notify you.
