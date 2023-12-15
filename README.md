@@ -48,3 +48,5 @@ This is a simple implementation of the classic Simon Says game built using HTML,
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/SuyashGaurav/Simon-game/blob/main/LICENSE) file for details.
+
+<img width="960" alt="image" src="https://github.com/SuyashGaurav/Simon-game/assets/102952185/50c998e0-2c62-49b5-a2de-fa4730703611">
