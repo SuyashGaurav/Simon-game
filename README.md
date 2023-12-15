@@ -1,6 +1,4 @@
-# Simon Says Game
-
-![Simon Says Game]
+# [Simon Says Game](https://suyashgaurav.github.io/Simon-game/)
 
 ## Overview
 
@@ -47,3 +45,6 @@ This is a simple implementation of the classic Simon Says game built using HTML,
 
 8. **Difficulty Increase:**
    - As you progress through the game, Simon will add more colors to the sequence, making it increasingly challenging.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/SuyashGaurav/Simon-game/blob/main/LICENSE) file for details.
