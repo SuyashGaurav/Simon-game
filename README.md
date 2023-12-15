@@ -47,4 +47,4 @@ This is a simple implementation of the classic Simon Says game built using HTML,
    - As you progress through the game, Simon will add more colors to the sequence, making it increasingly challenging.
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/SuyashGaurav/Simon-game/blob/main/LICENSE) file for details.
