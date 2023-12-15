@@ -79,10 +79,8 @@ function startGame(){
 }
 
 function checkMatch() {
-    console.log(userSeq)
-    console.log(gameSeq)
     if(userSeq[userSeq.length-1] == gameSeq[userSeq.length-1]){
-        console.log(true)
+        // console.log(true)
         return true
     }
     else{
