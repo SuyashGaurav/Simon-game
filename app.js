@@ -1,5 +1,6 @@
 let gameSeq = []
 let userSeq = []
+let highest_score = 0
 
 let btns = ["red", "yellow", "purple", "green"]
 
@@ -80,7 +81,9 @@ function checkMatch() {
         return true
     }
     else{
-        h2.innerText = `Game Over. Your score: ${level-1}`
+        if(level-1 > highest_score) highest_score = level-1
+        h2.innerHTML = `Game Over. Your score: ${level-1} <br> Highest Score: ${highest_score}`
+
         setTimeout(()=>{
             document.body.style.backgroundColor = "red"
             let newBtn = document.querySelector(".start-btn")
