@@ -1,6 +1,7 @@
 let gameSeq = []
 let userSeq = []
 let highest_score = 0
+let matchAll = true
 
 let btns = ["red", "yellow", "purple", "green"]
 
@@ -67,11 +68,7 @@ function startGame(){
         levelUp()
     }
     else{
-        userSeq = []
-        gameSeq = []
-        level = 0
-        started = false
-        startGame()
+        reset()
     }
 }
 
@@ -94,6 +91,7 @@ function checkMatch() {
         setTimeout(()=>{
             document.body.style.backgroundColor = "antiquewhite"
         }, 200)
+        matchAll = false
         return false
     }
 }
@@ -104,7 +102,7 @@ function btnPressed() {
     let colorPressed = btns.getAttribute("id")
     userSeq.push(colorPressed)
     checkMatch()
-    if(checkMatch() && userSeq.length == gameSeq.length){
+    if(matchAll && checkMatch() && userSeq.length == gameSeq.length){
         gameSeq = []
         userSeq = []
         setTimeout(() => {
@@ -116,4 +114,13 @@ function btnPressed() {
 let allBtns = document.getElementsByClassName("btn")
 for(let btns of allBtns){
     btns.addEventListener('click', btnPressed)
+}
+
+function reset() {
+    userSeq = []
+    gameSeq = []
+    level = 0
+    started = false
+    matchAll = true
+    startGame()
 }
