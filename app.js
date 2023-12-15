@@ -19,7 +19,7 @@ function btnFlash(randBtn){
         }, 1400)
         setTimeout(()=>{
             resolve(1)
-        }, 1500)
+        }, 1400)
     })  
 }
 
@@ -54,6 +54,9 @@ let levelUp = async() => {
 }
 
 document.addEventListener("keypress", () => {
+    userSeq = []
+    gameSeq = []
+    matchAll = true
     if(!started){
         started = true;
         document.querySelector(".start-btn").style.display = "none"
@@ -62,6 +65,9 @@ document.addEventListener("keypress", () => {
 })
 
 function startGame(){
+    userSeq = []
+    gameSeq = []
+    matchAll = true
     if(!started){
         started = true;
         document.querySelector(".start-btn").style.display = "none"
@@ -73,8 +79,10 @@ function startGame(){
 }
 
 function checkMatch() {
+    console.log(userSeq)
+    console.log(gameSeq)
     if(userSeq[userSeq.length-1] == gameSeq[userSeq.length-1]){
-        // console.log(true)
+        console.log(true)
         return true
     }
     else{
@@ -105,6 +113,7 @@ function btnPressed() {
     if(matchAll && checkMatch() && userSeq.length == gameSeq.length){
         gameSeq = []
         userSeq = []
+        console.log("abe chal na")
         setTimeout(() => {
             levelUp()
         }, 300);   
@@ -117,10 +126,7 @@ for(let btns of allBtns){
 }
 
 function reset() {
-    userSeq = []
-    gameSeq = []
     level = 0
     started = false
-    matchAll = true
     startGame()
 }
